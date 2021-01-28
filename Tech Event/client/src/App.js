@@ -1,3 +1,5 @@
+
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -9,9 +11,13 @@ import Home from "./components/Home";
 import NewEvent from "./components/NewEvent";
 
 
+  //skickar in events till Home
+const App = () => {
 
-const events = [
-    {
+  
+
+  const events = [
+   /*  {
       id: 1,
       title: "React 101",
       date: "2021-01-28 17:20",
@@ -65,26 +71,33 @@ const events = [
       
       description: "Lär sig använda React Native!",
       coverImage: "https://via.placeholder.com/320x280.png?text=Webpack",
-    }
+    } */
   ];
 
-  //skickar in events till Home
-const App = () => (
-  <Router>
+  const addEvent = (event) => {
+    events.push(event);
+
+    console.log(event);
+  }
+
+  return (
+    <Router>
     <Switch>
       <Route exact path="/events/:id">
         <EventDetails events={events}/>
       </Route>
       <Route path="/new">
-        <NewEvent  />
+        <NewEvent onEventAdded={addEvent} />
       </Route>
       <Route path="/">
         <Home events={events} />
       </Route>
     </Switch>    
   </Router>
+  )
+  
 
    
-);
+  };
 
 export default App;
