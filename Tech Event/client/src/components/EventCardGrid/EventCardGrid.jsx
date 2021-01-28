@@ -9,7 +9,8 @@ const styles = {
 
 const EventCardGrid = ({ events }) => (
     <div style={styles}>
-      {events.map(event => <EventCard event={event} />)}
+      {events.map(event => 
+      <EventCard key={event.id} event={event} />)}
     </div>
   );
   
