@@ -1,23 +1,15 @@
-
-
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import EventDetails from "./components/EventDetails";
 import Home from "./components/Home";
 import NewEvent from "./components/NewEvent";
 
+let nextEventId = 1;
 
-  //skickar in events till Home
+//skickar in events till Home
 const App = () => {
-
-  
-
   const events = [
-   /*  {
+    /*  {
       id: 1,
       title: "React 101",
       date: "2021-01-28 17:20",
@@ -75,29 +67,30 @@ const App = () => {
   ];
 
   const addEvent = (event) => {
+    event.id = nextEventId++;
+
+    //samma som
+    //nextEventId += 1;
     events.push(event);
 
     console.log(event);
-  }
+  };
 
   return (
     <Router>
-    <Switch>
-      <Route exact path="/events/:id">
-        <EventDetails events={events}/>
-      </Route>
-      <Route path="/new">
-        <NewEvent onEventAdded={addEvent} />
-      </Route>
-      <Route path="/">
-        <Home events={events} />
-      </Route>
-    </Switch>    
-  </Router>
-  )
-  
-
-   
-  };
+      <Switch>
+        <Route exact path="/events/:id">
+          <EventDetails events={events} />
+        </Route>
+        <Route path="/new">
+          <NewEvent onEventAdded={addEvent} />
+        </Route>
+        <Route path="/">
+          <Home events={events} />
+        </Route>
+      </Switch>
+    </Router>
+  );
+};
 
 export default App;
