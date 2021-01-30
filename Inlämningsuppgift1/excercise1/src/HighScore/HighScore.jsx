@@ -1,4 +1,5 @@
 import Scoreblock from "../Scoreblock/Scoreblock";
+import Navbar from '../Navbar/Navbar'
 
 const score = [
   {
@@ -26,12 +27,14 @@ const score = [
 
 const HighScore = () => {
   return (
+    <div>
+    <Navbar/>
     <div className="container">
-      <h5>Highscores</h5>
       <div>
         {score.map((score) => (
           <Scoreblock key={score.id} score={score} />
         ))}
+      </div>
       </div>
     </div>
   );
