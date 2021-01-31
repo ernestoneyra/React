@@ -1,5 +1,7 @@
 import Scoreblock from "../Scoreblock/Scoreblock";
 import Navbar from '../Navbar/Navbar'
+//import RegHighscore from '../RegHighscore/RegHighscore'
+
 
 const score = [
   {
@@ -30,6 +32,10 @@ const HighScore = () => {
     <div>
     <Navbar/>
     <div className="container">
+    <div>
+      <p className="text-end">Register highscore</p>
+    </div>
+    
       <div>
         {score.map((score) => (
           <Scoreblock key={score.id} score={score} />
@@ -41,3 +47,4 @@ const HighScore = () => {
 };
 
 export default HighScore;
+

@@ -25,7 +25,7 @@ const score = [
   },
 ];
 
-const HighScore = () => {
+/* const HighScore = () => {
   return (
     <div>
     <Navbar/>
@@ -40,4 +40,20 @@ const HighScore = () => {
   );
 };
 
-export default HighScore;
+export default HighScore; */
+
+
+export default function HighScore() {
+  return (
+    <div>
+    <Navbar/>
+    <div className="container">
+      <div>
+        {score.map((score) => (
+          <Scoreblock key={score.id} score={score} />
+        ))}
+      </div>
+      </div>
+    </div>
+  );
+};

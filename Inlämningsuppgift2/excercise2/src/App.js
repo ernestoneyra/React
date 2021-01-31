@@ -1,5 +1,9 @@
+import {useState} from 'react';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
 import React from 'react';
-import HighScore from './HighScore';
+import Home from './Home';
+
 
 if (module.hot) {
     module.hot.accept();
