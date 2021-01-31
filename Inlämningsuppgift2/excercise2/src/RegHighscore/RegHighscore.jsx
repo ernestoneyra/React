@@ -26,7 +26,7 @@ const RegHighscore = ({ onEventAdded }) => {
 
   return (
     <div className="container">
-    <form onSubmit={handleSubmit}>
+    <form >
       <h1 className="mb-4 text-center">Register highscore</h1>
       <label className="mb-2" for="game">
         Game:
@@ -64,7 +64,7 @@ const RegHighscore = ({ onEventAdded }) => {
       onChange={(e) => setHighscore(e.target.value)}
       id="score" 
       className="form-control" />
-      <button className="btn btn-primary">Submit</button>
+      <button className="btn btn-primary" onClick={handleSubmit}>Submit</button>
       </form>
     </div>
     

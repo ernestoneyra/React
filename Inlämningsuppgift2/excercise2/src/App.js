@@ -18,14 +18,14 @@ if (module.hot) {
     )
 } */
 
-const App = () => {
+const App = (score) => {
 
 
     return (
         <Router>
             <Switch>
-                <Route exact path="/score/:id">
-                    <RegHighscore score={score}/>
+                <Route exact path="/new">
+                    <RegHighscore onEventAdded={score}/>
                 </Route>
                 <Route path="/">
                     <Home score={score}/>
