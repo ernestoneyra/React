@@ -1,5 +1,5 @@
 import Scoreblock from "../Scoreblock/Scoreblock";
-import Navbar from '../Navbar/Navbar'
+//import Navbar from '../Navbar/Navbar'
 //import RegHighscore from '../RegHighscore/RegHighscore'
 
 
@@ -30,11 +30,11 @@ const score = [
 const HighScore = () => {
   return (
     <div>
-    <Navbar/>
+  {/*    <Navbar/>  */}
     <div className="container">
-    <div>
+    {/* <div>
       <p className="text-end">Register highscore</p>
-    </div>
+    </div> */}
     
       <div>
         {score.map((score) => (
