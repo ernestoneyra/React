@@ -38,9 +38,9 @@ const HighScore = ({score}) => {
     </div> */}
     
       <div>
-        {score.map((score) => (
+        {/* {score.map((score) => (
           <Scoreblock key={score.id} score={score} />
-        ))}
+        ))} */}
       </div>
     
       </div>

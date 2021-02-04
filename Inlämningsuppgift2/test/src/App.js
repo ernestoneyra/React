@@ -22,14 +22,15 @@ if (module.hot) {
 
 const App = () => {
 
-     /* const [score, setScore] = useState([]);
+      const [scores, setScore] = useState([]);
 
     const addScore = (score) => {
-        setScore(score, score)
-    }  */
+        setScore([...scores, score])
+        console.log(score)
+    }   
 
 
-     const score = [
+      /* const score = [
         {
           id: 1,
           game: "Tetris",
@@ -51,18 +52,18 @@ const App = () => {
           player: "Jessica Doe",
           highscore: "103 033p",
         },
-      ]; 
+      ];  */ 
 
 
     return (
         <Router>
             <Switch>
                 <Route exact path="/new">
-                    <RegHighscore />
+                    <RegHighscore onRegister={addScore}/>
                   
                 </Route>
                 <Route path="/">
-                    <Home score={score}/>
+                    <Home score={scores}/>
                 </Route>
             </Switch>
         </Router>
@@ -73,3 +74,5 @@ const App = () => {
 
 
 export default App;
+
+

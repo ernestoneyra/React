@@ -6,11 +6,18 @@ const styles = {
 const Scoreblock = ({ score }) => {
   return (
     <div className="mb-3 p-3" style={styles}>
-      <h4>{score.game}</h4>
+    <div>
+      {score.map(score => (
+        <div>
+        <h4>{score.game}</h4>
       <div>
         {score.player}, {score.date}
         <p className="float-end">{score.highscore}</p>
       </div>
+      </div>
+      ))}
+    </div>
+      
     </div>
   );
 };

@@ -22,7 +22,7 @@ const history =  useHistory();
 
     console.log(score)
 
-
+    onRegister(score);
 
     setGame("");
     setPlayer("");
