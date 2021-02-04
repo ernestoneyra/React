@@ -34,7 +34,7 @@ const history =  useHistory();
 
   return (
     <div className="container">
-      <form>
+      <form >
         <h1 className="mb-4 text-center">Register highscore</h1>
         <label className="mb-2" htmlFor="game">
           Game:
@@ -76,7 +76,7 @@ const history =  useHistory();
           id="score"
           className="form-control"
         />
-        <button className="btn btn-primary" onClick={handleSubmit}>
+        <button className="btn btn-primary mt-2" onClick={handleSubmit}>
           Submit
         </button>
       </form>
