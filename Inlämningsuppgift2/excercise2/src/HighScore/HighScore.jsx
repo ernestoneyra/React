@@ -1,9 +1,7 @@
-import Scoreblock from "../Scoreblock/Scoreblock";
 //import Navbar from '../Navbar/Navbar'
-//import RegHighscore from '../RegHighscore/RegHighscore'
+import Scoreblock from "../Scoreblock/Scoreblock";
 
-
-const score = [
+/* const score = [
   {
     id: 1,
     game: "Tetris",
@@ -25,26 +23,14 @@ const score = [
     player: "Jessica Doe",
     highscore: "103 033p",
   },
-];
+]; */
 
-const HighScore = () => {
+const HighScore = ({ score }) => {
   return (
-    <div>
-  {/*    <Navbar/>  */}
-    <div className="container">
-    {/* <div>
-      <p className="text-end">Register highscore</p>
-    </div> */}
-    
-      <div>
-        {score.map((score) => (
-          <Scoreblock key={score.id} score={score} />
-        ))}
-      </div>
-      </div>
+    <div className="">
+      <Scoreblock key={score.id} score={score} />
     </div>
   );
 };
 
 export default HighScore;
-
