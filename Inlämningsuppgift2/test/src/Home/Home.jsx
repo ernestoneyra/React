@@ -8,7 +8,7 @@ const Home = ({score}) => {
         <div>
             <Navbar/>
             <Link to={"/new"}><p className="text-center">Register highscore</p></Link>
-            <div className="container border border-primary ">
+            <div className="container  ">
             <HighScore score={score} />
             </div>
         </div>
