@@ -1,7 +1,8 @@
 import React from "react";
 import { useParams,  Link } from "react-router-dom";
 import HighScore from "../HighScore/HighScore";
-
+import Highscore2 from "../HighScore/HighScore2";
+import Scoreblock2 from "../ScoreBlock2/ScoreBlock2";
 import Scoreblock from "../Scoreblock/Scoreblock";
 
 
@@ -42,8 +43,8 @@ export default function GameDetail({ score, games }) {
         <div className="d-flex justify-content-center">
           <h1>Highscores</h1>
         </div>
-        
-    <HighScore score={score} games={games}/>
+        <Scoreblock2 score={score} />
+    
       </div> 
       
       </>

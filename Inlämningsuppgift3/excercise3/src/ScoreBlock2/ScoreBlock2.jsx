@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 
-const Scoreblock = ({ score }) => {
+const Scoreblock2 = ({ score }) => {
   return (
     <div className="d-flex row">
     
@@ -8,7 +8,7 @@ const Scoreblock = ({ score }) => {
           
           <div  className="border border-dark mb-2">
           <Link to={`/games/${score.urlSlug}`}>
-            {/* <h4>{score.game}</h4> */}
+            <h4>{score.game.title}</h4> 
             </Link>
             <div className="mt-2">
               {score.player}, {score.date}
@@ -21,4 +21,4 @@ const Scoreblock = ({ score }) => {
   );
 };
 
-export default Scoreblock;
+export default Scoreblock2;
