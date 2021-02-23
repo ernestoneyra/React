@@ -9,39 +9,25 @@ import Scoreblock from "../Scoreblock/Scoreblock";
 export default function GameDetail({ score, games }) {
 
   console.log(games)
-/* 
-  useEffect(() => {
 
-    fetch('./games.json')
-    .then(resp => resp.json())
-    .then(game => {
-      
-      console.log(game)
-      
-    })
-    
- 
-  }, []) */
+  const { slug } = useParams();
 
-  
-
-/*   const { slug } = useParams();
-
-  const scores = score.find((score) => score.urlSlug == slug);  */
+  const scores = games.find((score) => score.urlSlug == slug);  
   
 
   return (
-    <div>
+    <>
       <nav className="navbar navbar-dark bg-info d-flex justify-content-center mb-4">
         <span className="navbar-brand mb-0">
           <Link to={"/"}>
             <h1>Highscore</h1>
-            
           </Link>
+          
         </span>
       </nav>
-      </div>
-      /* <div className="container">
+      
+     
+       <div className="container">
         <div className=" d-flex">
         <div className="row">
           <h1>{scores.game}</h1>
@@ -59,7 +45,9 @@ export default function GameDetail({ score, games }) {
         
     <HighScore score={score} games={games}/>
       </div> 
-    </div>  */
+      
+      </>
+    
   );
 }
 
