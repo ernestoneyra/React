@@ -3,10 +3,10 @@ import Scoreblock from "../Scoreblock/Scoreblock";
 
 
 
-const HighScore = ({ score }) => {
+const HighScore = ({ score, games }) => {
   return (
     <div className="">
-      <Scoreblock  score={score} />
+      <Scoreblock  score={score} games={games}/>
     </div>
   );
 };

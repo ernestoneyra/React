@@ -35,7 +35,18 @@ const App = () => {
  
   }, [])
 
-  
+  useEffect(() => {
+
+    fetch('./games.json')
+    .then(resp => resp.json())
+    .then(games => {
+      
+      console.log(games)
+      setGames(games)
+    })
+    
+ 
+  }, [])
 
 
 
@@ -47,10 +58,10 @@ const App = () => {
           <RegHighscore onRegister={addScore} />
         </Route>
         <Route path="/games/:slug">
-          <GameDetail score={scores} />
+          <GameDetail games={games} score={scores}/>
         </Route>
         <Route path="/">
-          <Home  score={scores}/>
+          <Home  score={scores} games={games}/>
         </Route>
       </Switch>
     </Router>

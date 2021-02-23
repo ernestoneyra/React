@@ -1,12 +1,14 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useParams,  Link } from "react-router-dom";
-import HighScore2 from "../HighScore/HighScore2";
+import HighScore from "../HighScore/HighScore";
+
+import Scoreblock from "../Scoreblock/Scoreblock";
 
 
 
-export default function GameDetail({ score }) {
+export default function GameDetail({ score, games }) {
 
-  
+  console.log(games)
 /* 
   useEffect(() => {
 
@@ -21,11 +23,12 @@ export default function GameDetail({ score }) {
  
   }, []) */
 
+  
 
+/*   const { slug } = useParams();
 
-  const { slug } = useParams();
-
-  const scores = score.find((score) => score.urlSlug == slug);
+  const scores = score.find((score) => score.urlSlug == slug);  */
+  
 
   return (
     <div>
@@ -33,10 +36,12 @@ export default function GameDetail({ score }) {
         <span className="navbar-brand mb-0">
           <Link to={"/"}>
             <h1>Highscore</h1>
+            
           </Link>
         </span>
       </nav>
-      <div className="container">
+      </div>
+      /* <div className="container">
         <div className=" d-flex">
         <div className="row">
           <h1>{scores.game}</h1>
@@ -52,8 +57,10 @@ export default function GameDetail({ score }) {
           <h1>Highscores</h1>
         </div>
         
-    <HighScore2 score={scores}/>
-      </div>
-    </div>
+    <HighScore score={score} games={games}/>
+      </div> 
+    </div>  */
   );
 }
+
+/* <HighScore score={scores} games={games}/> */

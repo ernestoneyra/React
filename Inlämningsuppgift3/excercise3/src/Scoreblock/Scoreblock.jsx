@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 
-const Scoreblock = ({ score }) => {
+const Scoreblock = ({ score, games }) => {
   return (
     <div className="d-flex row">
     
