@@ -1,10 +1,28 @@
-import React from "react";
-import { useParams, useHistory, Link } from "react-router-dom";
+import React, { useEffect } from "react";
+import { useParams,  Link } from "react-router-dom";
 import HighScore2 from "../HighScore/HighScore2";
 
 
 
 export default function GameDetail({ score }) {
+
+  
+/* 
+  useEffect(() => {
+
+    fetch('./games.json')
+    .then(resp => resp.json())
+    .then(game => {
+      
+      console.log(game)
+      
+    })
+    
+ 
+  }, []) */
+
+
+
   const { slug } = useParams();
 
   const scores = score.find((score) => score.urlSlug == slug);
@@ -34,7 +52,7 @@ export default function GameDetail({ score }) {
           <h1>Highscores</h1>
         </div>
         
-    <HighScore2 score={score}/>
+    <HighScore2 score={scores}/>
       </div>
     </div>
   );

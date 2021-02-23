@@ -6,9 +6,9 @@ const Scoreblock = ({ score }) => {
     
         {score.map((score) => (
           
-          <div key={score.game} className="border border-dark mb-2">
+          <div  className="border border-dark mb-2">
           <Link to={`/games/${score.urlSlug}`}>
-            <h4>{score.game}</h4>
+            <h4>{score.game.title}</h4>
             </Link>
             <div>
               {score.player}, {score.date}

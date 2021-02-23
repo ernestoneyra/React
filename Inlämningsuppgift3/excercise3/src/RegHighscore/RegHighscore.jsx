@@ -42,8 +42,8 @@ const RegHighscore = ({ onRegister }) => {
         <label className="mb-2" htmlFor="game">
           Game:
         </label>
-        onChange={(e) => setGame(e.target.value)}
-        <select className="form-select" id="game" >
+       
+        <select className="form-select" id="game"  onChange={(e) => setGame(e.target.value)}>
         <option value="Choose game">Choose Game...</option>
           <option value="Tetris">Tetris</option>
           <option value="Pacman">Pacman</option>

@@ -12,21 +12,33 @@ if (module.hot) {
 
 const App = () => {
   const [scores, setScore] = useState([]);
+  const [games, setGames] = useState([]);
 
   const addScore = (score) => {
+   
     setScore([...scores, score]);
-    console.log(score);
+   // console.log(score);
   };
 
-    useEffect(() => {
-      fetch('../public/highscores.json')
-      .then(resp => resp.json())
-      .then(data => setScore(data))
-      console.log(data)
-      /* return () => {
-        cleanup
-      } */
-    }, [])
+    
+
+  useEffect(() => {
+
+    fetch('./highscores.json')
+    .then(resp => resp.json())
+    .then(score => {
+      
+      console.log(score)
+      setScore(score)
+    })
+    
+ 
+  }, [])
+
+  
+
+
+
 
   return (
     <Router>
@@ -35,10 +47,10 @@ const App = () => {
           <RegHighscore onRegister={addScore} />
         </Route>
         <Route path="/games/:slug">
-          <GameDetail  />
+          <GameDetail score={scores} />
         </Route>
         <Route path="/">
-          <Home  scores={scores}/>
+          <Home  score={scores}/>
         </Route>
       </Switch>
     </Router>

@@ -15,11 +15,11 @@
         "imageUrl": "https://via.placeholder.com/380x380.png?text=Pacman"
     }, {
         "id": 3,
-      "game": "Asteroids",
-     
-      "genre": "Genre: Shooter",
-     " release_year": "Relase Year: 1979",
-      "description": "The object of the game is to shoot and destroy the asteroids and saucers, while not colliding with either, or being hit by the saucers' counter-fire.",
-      "imageUrl": "https://via.placeholder.com/380x380.png?text=Asteroids"
+        "game": "Asteroids",
+
+        "genre": "Genre: Shooter",
+        " release_year": "Relase Year: 1979",
+        "description": "The object of the game is to shoot and destroy the asteroids and saucers, while not colliding with either, or being hit by the saucers' counter-fire.",
+        "imageUrl": "https://via.placeholder.com/380x380.png?text=Asteroids"
     }
 ]

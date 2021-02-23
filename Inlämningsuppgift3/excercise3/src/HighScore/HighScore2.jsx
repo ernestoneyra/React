@@ -5,7 +5,7 @@ export default function Highscore2({score}) {
     return (
         <div>
             <div className="">
-      <Scoreblock2 key={score.id} score={score} />
+      <Scoreblock2  score={score} />
     </div>
         </div>
     )
