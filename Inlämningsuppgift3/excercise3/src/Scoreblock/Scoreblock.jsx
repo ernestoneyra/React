@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom'
 
-const Scoreblock = ({ score, games }) => {
+const Scoreblock = ({ homeScore}) => {
   return (
     <div className="d-flex row">
     
-        {score.map((score) => (
+        {homeScore.map((score) => (
           
           <div  className="border border-dark mb-2">
           <Link to={`/games/${score.urlSlug}`}>

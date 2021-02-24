@@ -7,13 +7,14 @@ import Scoreblock from "../Scoreblock/Scoreblock";
 
 
 
-export default function GameDetail({ score, games }) {
+export default function GameDetail({score, games }) {
 
   console.log(games)
+  console.log(score)
 
   const { slug } = useParams();
 
-  const scores = games.find((score) => score.urlSlug == slug);  
+  const scores = games.find((game) => game.urlSlug == slug);  
   
 
   return (
@@ -43,8 +44,8 @@ export default function GameDetail({ score, games }) {
         <div className="d-flex justify-content-center">
           <h1>Highscores</h1>
         </div>
-        <Scoreblock2 score={score} />
-    
+       
+        <Scoreblock2 scores={score} />
       </div> 
       
       </>
@@ -53,3 +54,4 @@ export default function GameDetail({ score, games }) {
 }
 
 /* <HighScore score={scores} games={games}/> */
+ /*   */

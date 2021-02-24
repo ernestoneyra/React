@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 
 const RegHighscore = ({ onRegister }) => {
   const history = useHistory();
@@ -12,6 +12,7 @@ const RegHighscore = ({ onRegister }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    //Allt från formuläret regisreras här
     const score = {
      game,
       player,
@@ -23,11 +24,14 @@ const RegHighscore = ({ onRegister }) => {
 
     onRegister(score);
 
+  
     setGame("");
     setPlayer("");
     setDate("");
     setHighscore("");
 
+
+    //Byter sida till startsidan
     history.push("/");
   };
 
@@ -83,6 +87,9 @@ const RegHighscore = ({ onRegister }) => {
         <button className="btn btn-primary mt-2" onClick={handleSubmit}>
           Submit
         </button>
+        <Link to={"/"}>
+        <button className="btn btn-info mt-2 ms-2">Back</button>
+          </Link>  
       </form>
     </div>
   );
