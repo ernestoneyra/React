@@ -7,8 +7,8 @@ const Home = ({score}) => {
     return (
         <div>
             <Navbar/>
-            <Link to={"/new"}><p className="text-center">Register highscore</p></Link>
-            <div className="container border border-primary ">
+            <Link to={"/new"}><p className="text-center">Register Highscore</p></Link>
+            <div className="container  ">
             <HighScore score={score} />
             </div>
         </div>
