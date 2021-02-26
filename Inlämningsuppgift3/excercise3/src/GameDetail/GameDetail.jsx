@@ -22,7 +22,7 @@ export default function GameDetail({score, games }) {
       <nav className="navbar navbar-dark bg-info d-flex justify-content-center mb-4">
         <span className="navbar-brand mb-0">
           <Link to={"/"}>
-            <h1>High Score</h1>
+            <h1 style={{color: "white"}}>High Score</h1>
           </Link>
           
         </span>
@@ -42,7 +42,7 @@ export default function GameDetail({score, games }) {
         </div>
         
         <div className="d-flex justify-content-center">
-          <h1>Highscores</h1>
+          <h1>High Scores</h1>
         </div>
        
         <Scoreblock2 scores={score} />
