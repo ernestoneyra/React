@@ -39,7 +39,7 @@ const RegHighscore = ({ onRegister }) => {
     <div>
       <nav className="navbar navbar-dark bg-info d-flex justify-content-center mb-4">
         <span className="navbar-brand mb-0">
-          <h1>Register HighScore</h1>
+          <h1>Register High Score</h1>
         </span>
       </nav>
       <form className="container">

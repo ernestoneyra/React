@@ -1,9 +1,9 @@
 import React from "react";
 import { useParams,  Link } from "react-router-dom";
-import HighScore from "../HighScore/HighScore";
-import Highscore2 from "../HighScore/HighScore2";
+//import HighScore from "../HighScore/HighScore";
+//import Highscore2 from "../HighScore/HighScore2";
 import Scoreblock2 from "../ScoreBlock2/ScoreBlock2";
-import Scoreblock from "../Scoreblock/Scoreblock";
+//import Scoreblock from "../Scoreblock/Scoreblock";
 
 
 
@@ -22,7 +22,7 @@ export default function GameDetail({score, games }) {
       <nav className="navbar navbar-dark bg-info d-flex justify-content-center mb-4">
         <span className="navbar-brand mb-0">
           <Link to={"/"}>
-            <h1>Highscore</h1>
+            <h1>High Score</h1>
           </Link>
           
         </span>

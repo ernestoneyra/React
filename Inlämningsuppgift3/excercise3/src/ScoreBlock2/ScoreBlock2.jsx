@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+//import { Link } from 'react-router-dom'
 
 const Scoreblock2 = ({ scores }) => {
   return (
