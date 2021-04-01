@@ -20,22 +20,23 @@ const App = () => {
   const addScore = (score) => {
    
     setScore([...scores, score]);
-   // console.log(score);
+    
+    
   };
-
+    
     
 
   useEffect(() => {
 
     fetch('./highscores.json')
     .then(resp => resp.json())
+    
     .then(homeScore => {
       
-      //console.log(score)
+      
       setHomeScore(homeScore)
     })
-    
- 
+   
   }, [])
 
   useEffect(() => {
@@ -52,7 +53,7 @@ const App = () => {
   }, [])
 
 
-  console.log(games)
+ // console.log(games)
 
   return (
     <Router>

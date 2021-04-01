@@ -6,31 +6,42 @@
             "title": "Tetris"
         },
         "player": "John Doe",
-        "date": "2019-01-01 15:00",
+        "date": "2019-01-01 19:00",
         "highscore": "100 000",
         "urlSlug": "tetris"
     },
     { 
         "id": 2,
         "game": {
-            "id": 1,
+            "id": 2,
             "title": "Pacman"
         },
         "player": "Jane Doe",
         "date": "2019-02-02 16:00",
-        "highscore": "200 000",
+        "highscore": "100 000",
         "urlSlug": "pacman"
     },
     { 
         "id": 3,
         "game": {
-            "id": 1,
+            "id": 3,
             "title": "Asteroids"
         },
         "player": "Jan Doe",
         "date": "2019-03-03 17:00",
-        "highscore": "300 000",
+        "highscore": "320 000",
         "urlSlug": "asteroids"
+    },
+    { 
+        "id": 4,
+        "game": {
+            "id": 1,
+            "title": "Cannonball"
+        },
+        "player": "John Doe",
+        "date": "2019-01-01 18:00",
+        "highscore": "105 000",
+        "urlSlug": "tetris"
     }
 ] 
 

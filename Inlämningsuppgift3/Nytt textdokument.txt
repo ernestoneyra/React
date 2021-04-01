@@ -1,0 +1,133 @@
+
+Highscore uppgift
+
+// 1 - gruppera alla spel baserat på t.ex. id (dvs. "bollar")
+    // 2 - för varje spelgruppering (t.ex. id=1) (hög med bollar), sortera highscores i fallande ordning (sort()) (boll med högsta highscore överst i högen)
+    // 3 - hämta ut första highscore (boll) för varje gruppering
+
+----------------------------------------------------------
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in
+
+
+to delete something
+
+xxxx.filter(xx => xx !== item.id)
+create a new array (xx) without the item that has same item.id
+
+numbers = [1,2,3}
+numbers.filter(num => (num = [1,2,3}
+num !== 2) (num = [1,3]
+created a new array without the 2
+
+------------------------------------------------------------------------
+
+groupby in nested arrays, bject property
+
+7//för att få bort nollan och komma åt objektet i min nuvarande kod måste jag skapa en ny variabel och lägga värdet som index 0 e.g
+let nestedScore = score[0]
+nestedScore blir objektet jag behövde. Gruperingen måste först ske 
+
+const highscores = [
+  { id: 1, game: { id: 1, title: "Tetris" }, score: 5000, date: ... },
+  { id: 2, game: { id: 1, title: "Tetris" }, score: 6000, date: ... },
+  { id: 3, game: { id: 1, title: "Tetris" }, score: 7000, date: ... },
+  { id: 4, game: { id: 2, title: "Astroids" }, score: 5000, date: ... },
+  { id: 5, game: { id: 2, title: "Astroids" }, score: 6000, date: ... },
+];
+
+ 
+
+# Steg 1
+
+ 
+
+const highscoresMap = [
+  
+      0: [
+          { id: 1, game: { id: 1, title: "Tetris" }, score: 7000, date: ... },
+          { id: 4, game: { id: 1, title: "Cannonball" }, score: 6000, date: ... },
+        
+      ],
+      1: [
+          { id: 2, game: { id: 2, title: "Pacman" }, score: 6000, date: ... },
+       
+      ],
+      2: [
+          { id: 3, game: { id: 3, title: "Astroids" }, score: 6000, date: ... },
+          
+      ]	
+   }
+
+ 
+
+
+# Steg 2
+
+ 
+
+for (const highscores in highscoresMap )
+{
+    highscores    .sort((x, y) => ... kolla på score
+}
+
+ 
+
+# Steg 3
+
+ 
+
+const topHighscores = [];
+
+ 
+
+for (const highscores in highscoresMap )
+{
+   topHighscores .push(highscores["1"][0]) // pusha det högsta highscore till topHighScore
+
+ 
+
+}
+----------------------------------------------------
+someVariable = [
+{
+"1": [{...}, {...}],
+"2": [{...}],
+"3": [{...}, {...}, {...}, {...}],
+}
+];
+
+const mappedHighscoers = someVriable[0];
+
+{
+"1": [{...}, {...}],
+"2": [{...}],
+"3": [{...}, {...}, {...}, {...}],
+}
+
+for(const highscores in mappedHighscoers )
+console.log(highscores)
+
+---------------------------------------------------------
+function groupBy(objectArray, property) {
+
+ return objectArray.reduce(function (acc, obj) {
+
+ // "game.id" -> "game" "id"
+const x = { game: { id: 1
+let key = obj["game"]["id"]
+
+ if (!acc[key]) {
+
+ acc[key] = []
+
+ }
+
+ acc[key].push(obj)
+
+ return acc }, {})
+
+}
+

@@ -9,17 +9,19 @@ import Scoreblock2 from "../ScoreBlock2/ScoreBlock2";
 
 export default function GameDetail({score, games }) {
 
-  console.log(games)
-  console.log(score)
+  
 
   const { slug } = useParams();
 
-  const scores = games.find((game) => game.urlSlug == slug);  
+  const scores = games.find((game) => game.urlSlug === slug); 
+  
+  console.log(games)
+  //console.log(score)
   
 
   return (
     <>
-      <nav className="navbar navbar-dark bg-info d-flex justify-content-center mb-4">
+       <nav className="navbar navbar-dark bg-info d-flex justify-content-center mb-4">
         <span className="navbar-brand mb-0">
           <Link to={"/"}>
             <h1 style={{color: "white"}}>High Score</h1>
