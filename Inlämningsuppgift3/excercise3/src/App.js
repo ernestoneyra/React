@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
-import React from 'react';
+import React from "react";
 import Home from "./Home";
 import RegHighscore from "./RegHighscore";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -15,45 +15,29 @@ const App = () => {
   const [games, setGames] = useState([]);
   const [homeScore, setHomeScore] = useState([]);
 
-  
-
   const addScore = (score) => {
-   
     setScore([...scores, score]);
-    
-    
   };
-    
-    
 
   useEffect(() => {
+    fetch("./highscores.json")
+      .then((resp) => resp.json())
 
-    fetch('./highscores.json')
-    .then(resp => resp.json())
-    
-    .then(homeScore => {
-      
-      
-      setHomeScore(homeScore)
-    })
-   
-  }, [])
+      .then((homeScore) => {
+        setHomeScore(homeScore);
+      });
+  }, []);
 
   useEffect(() => {
+    fetch("./games.json")
+      .then((resp) => resp.json())
+      .then((games) => {
+        //console.log(games)
+        setGames(games);
+      });
+  }, []);
 
-    fetch('./games.json')
-    .then(resp => resp.json())
-    .then(games => {
-      
-      //console.log(games)
-      setGames(games)
-    })
-    
- 
-  }, [])
-
-
- // console.log(games)
+  // console.log(games)
 
   return (
     <Router>
@@ -62,10 +46,10 @@ const App = () => {
           <RegHighscore onRegister={addScore} />
         </Route>
         <Route path="/games/:slug">
-          <GameDetail score={scores} games={games}/>
+          <GameDetail scores={scores} games={games} />
         </Route>
         <Route path="/">
-          <Home  homeScore={homeScore} games={games}/>
+          <Home homeScore={homeScore} games={games} />
         </Route>
       </Switch>
     </Router>
@@ -73,7 +57,6 @@ const App = () => {
 };
 
 export default App;
-
 
 /* const score = [
   {

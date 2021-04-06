@@ -1,105 +1,50 @@
 import { Link } from "react-router-dom";
 
 const GlobalHighscores = ({ scores }) => {
-  //const globalHighscores = getGlobalHighscores(scores);
-
-  //////////////////////////////////////////////////////////////
-
- /*    // Accepts the array and key
-  const groupBy = (game, id) => {
-  // Return the end result
-  return game.reduce((result, currentValue) => {
-    // If an array already present for key, push it to the array. Else create an array and push the object
-    (result[currentValue[id]] = result[currentValue[id]] || []).push(
-      currentValue
-    );
-    // Return the current iteration `result` value, this will be taken as next iteration `result` value and accumulate
-    return result;
-  }, {}); // empty object is the initial value for result object
-};
-
-// Group by Id as key to the person array
-
-
-const gamesGroupedById = groupBy(scores, 'id');
-  console.table(gamesGroupedById); */
-  ////////////////////////////////////////////////////////////
-
-  //console.log(scores)
-
-  //console.log('sort score:', scores)
-
-/* scores.map(score => {
-  
-  return console.log(score.id, score.highscore)
-  
-}) */
-
-/* let score = []
-
-function groupBy(objectArray, property) {
-  return objectArray.reduce(function (acc, obj) {
-    let key = obj[property]
-    if (!acc[key]) {
-      acc[key] = []
-    }
-    acc[key].push(obj)
-    return acc  }, {})
-}
-
-score.push(groupBy(scores, 'id'))
-console.log(score) */
-
-function groupItemBy(array, property) {
-  let hash = {},
-      props = property.split('.');
-  for (let i = 0; i < array.length; i++) {
-      let key = props.reduce(function(acc, prop) {
-          return acc && acc[prop];
+  function groupItemBy(array, property) {
+    let hash = {},
+      props = property.split(".");
+    for (let i = 0; i < array.length; i++) {
+      let key = props.reduce(function (acc, prop) {
+        return acc && acc[prop];
       }, array[i]);
       if (!hash[key]) hash[key] = [];
       hash[key].push(array[i]);
+    }
+    return hash;
   }
-  return hash;
-}
 
-let highscoresMap = Object.values(groupItemBy(scores, 'game.id'));
+  let highscoresMap = Object.values(groupItemBy(scores, "game.id"));
 
-console.log(highscoresMap[0])
-/* groupedScores.map((score) => {
-  return   console.log(score);
-})  */
- 
-/*  for (const game in highscoresMap){
-  game.sort((a, b) => a- b)
-  console.log(game)
-}  */
+  //console.log(highscoresMap)
 
+  /* if (!highscoresMap.length === 0) {
+  for (const game in highscoresMap){
+    game.sort((a, b) => a.highscore- b.highscore)
+    console.log(game) 
+    console.log(`${game}: ${highscoresMap[game]}`);
+} 
+} */
 
+  //console.log(highscoresMap)
 
-
-/* const hej = score[0]
+  /* const hej = score[0]
 console.log(hej) */
-const topHighScores = []
+  /* const topHighScores = []
 highscoresMap.map(id => {
-  return topHighScores.push(id[0])
+  return topHighScores.push(id)
 })
-/* for (const id in highscoresMap[0]){
-  //console.log(id)
-  topHighScores.push(id)
-}   */
-console.log(topHighScores[2])
 
+console.log(topHighScores) */
 
+  //console.log(score[0].id)
 
-//console.log(score[0].id)
-
-/*  score.map(hej => (
+  /*  score.map(hej => (
  console.log('hej', hej)
  //hej.sort((a, b) => b.game  - a.game)
 
 ))  */
-//console.log(scores)
+  //console.log(scores)
 
   /* 
 
@@ -116,24 +61,19 @@ console.log(topHighScores[2])
   //};
 
   return (
-  
     <div className="d-flex row">
-    
-    {highscoresMap.map((score) => (
-    
-      <div  className="border border-dark mb-2">
-      <Link to={`/games/${score[0].urlSlug}`}>
-        <h4>{score[0].game.title}</h4>
-        </Link>
-        <div>
-          {score[0].player}, {score[0].date}
-          <p className="float-end">{score[0].highscore} p</p>
+      {highscoresMap.map((score) => (
+        <div className="border border-dark mb-2">
+          <Link to={`/games/${score[0].urlSlug}`}>
+            <h4>{score[0].game.title}</h4>
+          </Link>
+          <div>
+            {score[0].player}, {score[0].date}
+            <p className="float-end">{score[0].highscore} p</p>
+          </div>
         </div>
-      </div>
-    ))} 
-    
-  </div> 
-  
+      ))}
+    </div>
   );
 
   /*  return (
