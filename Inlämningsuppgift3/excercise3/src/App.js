@@ -24,10 +24,10 @@ const App = () => {
       .then((resp) => resp.json())
 
       .then((homeScore) => {
-        homeScore.sort((a, b) => a.highscore - b.highscore)
-        setHomeScore(homeScore);
+        const sortedScores = homeScore.sort((a, b) => a.highscore - b.highscore)
+        setHomeScore(sortedScores);
         
-        //console.log(homeScore)
+        //console.log(sortedScores)
       });
   }, []);
 

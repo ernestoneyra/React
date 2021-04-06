@@ -7,9 +7,10 @@
         },
         "player": "John Doe",
         "date": "2019-01-01 19:00",
-        "highscore": "100 000",
+        "highscore": "130 000",
         "urlSlug": "tetris"
     },
+  
  
    
     
@@ -24,7 +25,7 @@
         },
         "player": "Jane Doe",
         "date": "2019-02-02 16:00",
-        "highscore": "100 000",
+        "highscore": "120 000",
         "urlSlug": "pacman"
     },
     { 
