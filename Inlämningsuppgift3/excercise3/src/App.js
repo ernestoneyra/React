@@ -16,6 +16,7 @@ const App = () => {
   const [homeScore, setHomeScore] = useState([]);
 
   const addScore = (score) => {
+    
     setScore([...scores, score]);
   };
 

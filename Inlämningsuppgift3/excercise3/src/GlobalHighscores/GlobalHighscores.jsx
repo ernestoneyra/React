@@ -70,7 +70,7 @@ console.log(topHighScores) */
   return (
     <div>
       {scores.filter(highscore => highscore).map(score => (
-       <div className="border border-dark mb-2">
+       <div key={score.urlSlug} className="border border-dark mb-2">
           <Link to={`/games/${score.urlSlug}`}>
             <h4>{score.game.title}</h4>
           </Link>

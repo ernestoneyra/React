@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-duplicate-props */
 import { useState } from "react";
 import { useHistory, Link } from "react-router-dom";
 
@@ -8,6 +9,8 @@ const RegHighscore = ({ onRegister }) => {
   const [player, setPlayer] = useState("");
   const [date, setDate] = useState("");
   const [highscore, setHighscore] = useState("");
+  const [urlSlug, setUrlSlug] = useState("")
+  
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -18,9 +21,11 @@ const RegHighscore = ({ onRegister }) => {
       player,
       date,
       highscore,
+      urlSlug,
+    
     };
 
-    
+ 
 
     onRegister(score);
 
@@ -47,11 +52,13 @@ const RegHighscore = ({ onRegister }) => {
           Game:
         </label>
        
-        <select className="form-select" id="game"  onChange={(e) => setGame(e.target.value)}>
+        <select className="form-select" id="urlSlug game"
+        onChange={(e) => {setGame(e.target.value); setUrlSlug(e.target.value)}}
+        >
         <option value="Choose game">Choose Game...</option>
-          <option value="Tetris">Tetris</option>
-          <option value="Pacman">Pacman</option>
-          <option value="Asteroids">Asteroids</option>
+          <option value="tetris">Tetris</option>
+          <option value="pacman">Pacman</option>
+          <option value="asteroids">Asteroids</option>
         </select>
         
         <label className="mb-2" htmlFor="player">
@@ -84,6 +91,7 @@ const RegHighscore = ({ onRegister }) => {
           id="score"
           className="form-control"
         />
+       
         <button className="btn btn-primary mt-2" onClick={handleSubmit}>
           Submit
         </button>
@@ -98,3 +106,13 @@ const RegHighscore = ({ onRegister }) => {
 ////////////////////////////////////
 export default RegHighscore;
 
+/*  <label className="mb-2" htmlFor="score">
+          UrlSlug:
+        </label>
+        <input
+          type="text"
+          value={urlSlug}
+          onChange={(e) => setUrlSlug(e.target.value)}
+          id="urlslug"
+          className="form-control"
+        /> */

@@ -1,10 +1,12 @@
 //import { Link } from 'react-router-dom'
 import { useParams} from "react-router-dom";
 
-const Scoreblock2 = ({ scores, homeScore,  }) => {
+const Scoreblock2 = ({ scores, homeScore, games }) => {
   const { slug } = useParams();
-
+  //const game = games.find((game) => game.urlSlug === slug); 
   const score = homeScore.filter((score) => score.urlSlug === slug)
+  const scoress = scores.filter((score) => score.urlSlug === slug)
+  //console.log(scores)
   
   /* const score2 = scores.filter((score) => score.game === slug)
   console.log(score2[0]) */
@@ -12,23 +14,32 @@ const Scoreblock2 = ({ scores, homeScore,  }) => {
   
   //console.log(currentGameHighscores)
 
- 
+ /*  const currentGameHighscores = homeScore.filter((score) => {console.log('score.urlSlug',score.urlSlug, 'game.urlSlug', game.urlSlug); return score.urlSlug === game.urlSlug} )
 
+console.log(currentGameHighscores) */
+  //console.log(score)
+  //console.log(game)
+  const combined = [...score, ...scoress]
+  console.log(combined)
+  
+
+  console.log(combined)
 //console.log(score[0])
+
   return (
     <div className="d-flex row">
-      <div className="border border-dark mb-2">
+      {/* <div className="border border-dark mb-2">
           <div className="mt-2">
             {score[0].player}, {score[0].date}, {score[0].game.title}
             <p className="float-end">{score[0].highscore} p</p>
           </div>
           
-          </div>
+          </div> */}
           <div>
-          {scores.map((score) => (
-        <div className="border border-dark mb-2">
+          {combined.map((score) => (
+        <div key={score.urlSlug} className="border border-light mb-2">
           <div className="mt-2">
-            {score.player}, {score.date}, {score.game.title}
+            {score.player}, {score.date}, {score.urlSlug} 
             <p className="float-end">{score.highscore} p</p>
           </div>
         </div>

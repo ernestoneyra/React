@@ -1,0 +1,2 @@
+Sortera highscore
+ta ut det högsta från lista till home

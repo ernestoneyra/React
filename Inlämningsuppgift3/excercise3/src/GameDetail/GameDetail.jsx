@@ -13,10 +13,11 @@ export default function GameDetail({ scores, games, homeScore }) {
   const game = games.find((game) => game.urlSlug === slug); //.filter?
   //få in från .json filen
   //const currentGameHighscores = homeScore.filter((score) => score.urlSlug === game.urlSlug)
+  //console.log(game)
 
-  //console.log(currentGameHighscores)
-//const currentHighScore = homeScore.filter((score) => score.urlSlug === game.urlslug)
-//console.log(score) 
+  /* const currentGameHighscores = homeScore.filter((score) => {console.log('score.urlSlug',score.urlSlug, 'game.urlSlug', game.urlSlug); return score.urlSlug === game.urlSlug} )
+
+  console.log(currentGameHighscores) */
 
 
   /* if (score.length !== 0) {
@@ -50,7 +51,7 @@ export default function GameDetail({ scores, games, homeScore }) {
           <h1>High Scores</h1>
         </div>
 
-        <Scoreblock2 scores={scores} homeScore={homeScore}  />
+        <Scoreblock2 scores={scores} homeScore={homeScore} games={games} />
       </div>
     </>
   );
