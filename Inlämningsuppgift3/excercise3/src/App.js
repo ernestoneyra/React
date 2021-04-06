@@ -24,7 +24,10 @@ const App = () => {
       .then((resp) => resp.json())
 
       .then((homeScore) => {
+        homeScore.sort((a, b) => a.highscore - b.highscore)
         setHomeScore(homeScore);
+        
+        //console.log(homeScore)
       });
   }, []);
 
@@ -37,7 +40,7 @@ const App = () => {
       });
   }, []);
 
-  // console.log(games)
+  
 
   return (
     <Router>
@@ -46,7 +49,7 @@ const App = () => {
           <RegHighscore onRegister={addScore} />
         </Route>
         <Route path="/games/:slug">
-          <GameDetail scores={scores} games={games} />
+          <GameDetail scores={scores} homeScore={homeScore} games={games} />
         </Route>
         <Route path="/">
           <Home homeScore={homeScore} games={games} />

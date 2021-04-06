@@ -5,13 +5,16 @@ import { useParams, Link } from "react-router-dom";
 import Scoreblock2 from "../ScoreBlock2/ScoreBlock2";
 //import Scoreblock from "../Scoreblock/Scoreblock";
 
-export default function GameDetail({ scores, games }) {
+export default function GameDetail({ scores, games, homeScore }) {
   const { slug } = useParams();
+
+  //console.log(games)
 
   const game = games.find((game) => game.urlSlug === slug); //.filter?
   //få in från .json filen
+//const score = homeScore.filter((score) => score.urlSlug === slug)
+//console.log(score) 
 
-  //console.log(game)
 
   /* if (score.length !== 0) {
    score.sort((a, b) => b.highscore - a.highscore);
@@ -44,7 +47,7 @@ export default function GameDetail({ scores, games }) {
           <h1>High Scores</h1>
         </div>
 
-        <Scoreblock2 scores={scores} />
+        <Scoreblock2 scores={scores} homeScore={homeScore}/>
       </div>
     </>
   );

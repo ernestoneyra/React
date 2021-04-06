@@ -10,18 +10,12 @@
         "highscore": "100 000",
         "urlSlug": "tetris"
     },
+ 
+   
+    
   
-    { 
-        "id": 2,
-        "game": {
-            "id": 1,
-            "title": "Tetris"
-        },
-        "player": "John Doe",
-        "date": "2019-01-01 19:00",
-        "highscore": "90 000",
-        "urlSlug": "tetris"
-    },
+  
+ 
     { 
         "id": 2,
         "game": {

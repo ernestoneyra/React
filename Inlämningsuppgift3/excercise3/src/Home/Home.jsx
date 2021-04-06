@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import GlobalHighscores from "../GlobalHighscores/GlobalHighscores";
 
 const Home = ({ homeScore }) => {
+  //console.log(homeScore)
   return (
     <div>
       <Navbar />

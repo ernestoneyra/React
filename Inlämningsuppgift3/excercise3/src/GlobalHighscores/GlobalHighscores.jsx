@@ -1,7 +1,14 @@
 import { Link } from "react-router-dom";
 
 const GlobalHighscores = ({ scores }) => {
-  function groupItemBy(array, property) {
+
+  //console.log(scores[0])
+
+//scores[0].filter(score => score.highscore)
+
+ /* let tetris = scores[0]
+  console.log(scores[0])  */
+  /* function groupItemBy(array, property) {
     let hash = {},
       props = property.split(".");
     for (let i = 0; i < array.length; i++) {
@@ -14,7 +21,7 @@ const GlobalHighscores = ({ scores }) => {
     return hash;
   }
 
-  let highscoresMap = Object.values(groupItemBy(scores, "game.id"));
+  let highscoresMap = Object.values(groupItemBy(scores, "game.id")); */
 
   //console.log(highscoresMap)
 
@@ -61,20 +68,44 @@ console.log(topHighScores) */
   //};
 
   return (
-    <div className="d-flex row">
-      {highscoresMap.map((score) => (
-        <div className="border border-dark mb-2">
-          <Link to={`/games/${score[0].urlSlug}`}>
-            <h4>{score[0].game.title}</h4>
+    <div>
+      {scores.filter(highscore => highscore).map(score => (
+       <div className="border border-dark mb-2">
+          <Link to={`/games/${score.urlSlug}`}>
+            <h4>{score.game.title}</h4>
           </Link>
           <div>
-            {score[0].player}, {score[0].date}
-            <p className="float-end">{score[0].highscore} p</p>
+            {score.player}, {score.date}
+            <p className="float-end">{score.highscore} p</p>
           </div>
         </div>
+     
+       
       ))}
     </div>
   );
+
+/*   <li >
+  {score.game.id}
+  {score.highscore}
+</li> */
+
+  /* <div className="d-flex row">
+      {scores.map((score) => (
+        <div className="border border-dark mb-2">
+          <Link to={`/games/${score.urlSlug}`}>
+            <h4>{score.game.title}</h4>
+          </Link>
+          <div>
+            {score.player}, {score.date}
+            <p className="float-end">{score.highscore} p</p>
+          </div>
+        </div>
+      ))}
+    </div> */
+
+
+
 
   /*  return (
      <div className="d-flex row">
