@@ -20,11 +20,14 @@ console.log(currentGameHighscores) */
   //console.log(score)
   //console.log(game)
   const combined = [...score, ...scoress]
-  console.log(combined)
-  
+  //let sorted = combined.sort((a,b)=> a.highscore-b.highscore)
+/* for (let highscore of combined) {
+  let sorted = highscore.sort((a,b)=> a.highscore-b.highscore)
+  console.log(sorted)
+} */
+ 
 
   console.log(combined)
-//console.log(score[0])
 
   return (
     <div className="d-flex row">
@@ -37,7 +40,7 @@ console.log(currentGameHighscores) */
           </div> */}
           <div>
           {combined.map((score) => (
-        <div key={score.urlSlug} className="border border-light mb-2">
+        <div key={score.id} className="border border-light mb-2">
           <div className="mt-2">
             {score.player}, {score.date}, {score.urlSlug} 
             <p className="float-end">{score.highscore} p</p>
