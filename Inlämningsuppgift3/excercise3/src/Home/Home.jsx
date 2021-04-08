@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 //import HighScore from '../HighScore/HighScore';
 import GlobalHighscores from "../GlobalHighscores/GlobalHighscores";
 
-const Home = ({ homeScore }) => {
+const Home = ({ homeScore, games }) => {
   //console.log(homeScore)
   return (
     <div>
@@ -12,7 +12,7 @@ const Home = ({ homeScore }) => {
         <p className="text-center">Register High Score</p>
       </Link>
       <div className="container ">
-        <GlobalHighscores scores={homeScore} />
+        <GlobalHighscores scores={homeScore} games={games}/>
       </div>
     </div>
   );

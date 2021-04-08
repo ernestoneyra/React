@@ -1,13 +1,58 @@
 import { Link } from "react-router-dom";
 
-const GlobalHighscores = ({ scores }) => {
+const GlobalHighscores = ({ scores, games }) => {
+
+  const sortedHighscores = games.map((game) =>
+  scores
+    .filter((highscore) => highscore.urlSlug === game.urlSlug)
+    .sort((a, b) => b.highscore.localeCompare(a.highscore))
+);
+return (
+  <div>
+    {sortedHighscores.map((score, index) => (
+      <div key={index} className="border p-3 mb-2">
+        <Link to={`/games/${score[0].urlSlug}`}>
+          <h4>{score[0].game.title}</h4>
+        </Link>
+        <div>
+          {score[0].player}, {score[0].date}
+          <p className="float-end">{score[0].highscore} p</p>
+        </div>
+      </div>
+    ))}
+  </div>
+);
+
+ 
+};
+
+export default GlobalHighscores;
+
+
+/* return (
+  <div>
+    {scores.map(score => (
+     <div key={score.id} className="border border-dark mb-2">
+        <Link to={`/games/${score.urlSlug}`}>
+          <h4>{score.game.title}</h4>
+        </Link>
+        <div>
+          {score.player}, {score.date}
+          <p className="float-end">{score.highscore} p</p>
+        </div>
+      </div>
+   
+     
+    ))}
+  </div>
+); */
 
   //console.log(scores[0])
-
+//console.log(games)
 //scores[0].filter(score => score.highscore)
-
- /* let tetris = scores[0]
-  console.log(scores[0])  */
+/* 
+  let tetris = scores[0]
+  console.log(scores[0])    */
   /* function groupItemBy(array, property) {
     let hash = {},
       props = property.split(".");
@@ -21,10 +66,19 @@ const GlobalHighscores = ({ scores }) => {
     return hash;
   }
 
-  let highscoresMap = Object.values(groupItemBy(scores, "game.id")); */
+  let highscoresMap = Object.values(groupItemBy(scores, "urlSlug"));
+  let gamesMap = Object.values(groupItemBy(games, "urlSlug"));
+  console.log(highscoresMap)
+  console.log(gamesMap)
+ 
 
-  //console.log(highscoresMap)
 
+let hej = highscoresMap[0]
+  console.log(hej) */
+/* const sortedarray = hej.sort((a, b) => b.highscore - a.highscore)
+
+
+console.log(sortedarray)  */  
   /* if (!highscoresMap.length === 0) {
   for (const game in highscoresMap){
     game.sort((a, b) => a.highscore- b.highscore)
@@ -67,24 +121,9 @@ console.log(topHighScores) */
 
   //};
 
-  return (
-    <div>
-      {scores.filter(highscore => highscore).map(score => (
-       <div key={score.urlSlug} className="border border-dark mb-2">
-          <Link to={`/games/${score.urlSlug}`}>
-            <h4>{score.game.title}</h4>
-          </Link>
-          <div>
-            {score.player}, {score.date}
-            <p className="float-end">{score.highscore} p</p>
-          </div>
-        </div>
-     
-       
-      ))}
-    </div>
-  );
 
+
+  
 /*   <li >
   {score.game.id}
   {score.highscore}
@@ -125,6 +164,3 @@ console.log(topHighScores) */
       </div> 
    
   );  */
-};
-
-export default GlobalHighscores;

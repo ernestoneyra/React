@@ -11,7 +11,7 @@
         "urlSlug": "tetris"
     },
     { 
-        "id": 1,
+        "id": 4,
         "game": {
             "id": 1,
             "title": "Tetris"
@@ -22,7 +22,7 @@
         "urlSlug": "tetris"
     },
     { 
-        "id": 1,
+        "id": 5,
         "game": {
             "id": 1,
             "title": "Tetris"
@@ -49,7 +49,7 @@
         "urlSlug": "pacman"
     },
     { 
-        "id": 2,
+        "id": 6,
         "game": {
             "id": 2,
             "title": "Pacman"
@@ -60,7 +60,7 @@
         "urlSlug": "pacman"
     },
     { 
-        "id": 2,
+        "id": 7,
         "game": {
             "id": 2,
             "title": "Pacman"
@@ -82,7 +82,7 @@
         "urlSlug": "asteroids"
     },
     { 
-        "id": 3,
+        "id": 8,
         "game": {
             "id": 3,
             "title": "Asteroids"
@@ -93,7 +93,7 @@
         "urlSlug": "asteroids"
     },
     { 
-        "id": 3,
+        "id": 9,
         "game": {
             "id": 3,
             "title": "Asteroids"

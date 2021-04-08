@@ -27,7 +27,7 @@ console.log(currentGameHighscores) */
 } */
  
 
-  console.log(combined)
+  //console.log(combined)
 
   return (
     <div className="d-flex row">
@@ -40,7 +40,7 @@ console.log(currentGameHighscores) */
           </div> */}
           <div>
           {combined.map((score) => (
-        <div key={score.id} className="border border-light mb-2">
+        <div key={score.id} className="border p-3 mb-2">
           <div className="mt-2">
             {score.player}, {score.date}, {score.urlSlug} 
             <p className="float-end">{score.highscore} p</p>
