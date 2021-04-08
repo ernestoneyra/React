@@ -6,7 +6,7 @@ const Scoreblock2 = ({ scores, homeScore, games }) => {
   //const game = games.find((game) => game.urlSlug === slug); 
   const score = homeScore.filter((score) => score.urlSlug === slug)
   const scoress = scores.filter((score) => score.urlSlug === slug) 
-  console.log(homeScore)
+  
 
 
 
@@ -29,13 +29,14 @@ console.log(currentGameHighscores) */
   console.log(sorted)
 } */
  
-/* const sortedHighscores = games.map((game) =>
-scores
-  .filter((highscore) => highscore.urlSlug === game.urlSlug)
-  .sort((a, b) => b.highscore.localeCompare(a.highscore))
-);
-console.log(sortedHighscores) */
-  console.log(combined)
+
+
+  const sorted = combined.sort((a, b) => b.highscore.localeCompare(a.highscore))
+
+
+
+  console.log(sorted)
+ 
 
   return (
     <div className="d-flex row">
@@ -47,7 +48,7 @@ console.log(sortedHighscores) */
           
           </div> */}
           <div>
-          {combined.map((score) => (
+          {sorted.map((score) => (
         <div key={score.id} className="border p-3 mb-2">
           <div className="mt-2">
             {score.player}, {score.date}, {score.urlSlug} 
