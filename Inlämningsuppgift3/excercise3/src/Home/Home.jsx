@@ -1,10 +1,8 @@
 import Navbar from "../Navbar/Navbar";
 import { Link } from "react-router-dom";
-//import HighScore from '../HighScore/HighScore';
 import GlobalHighscores from "../GlobalHighscores/GlobalHighscores";
 
 const Home = ({ homeScore, games }) => {
-  //console.log(homeScore)
   return (
     <div>
       <Navbar />
@@ -12,7 +10,7 @@ const Home = ({ homeScore, games }) => {
         <p className="text-center">Register High Score</p>
       </Link>
       <div className="container ">
-        <GlobalHighscores scores={homeScore} games={games}/>
+        <GlobalHighscores scores={homeScore} games={games} />
       </div>
     </div>
   );

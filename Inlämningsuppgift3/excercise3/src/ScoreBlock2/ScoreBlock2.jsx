@@ -1,7 +1,6 @@
-
 import { useParams } from "react-router-dom";
 
-const Scoreblock2 = ({ scores, homeScore, games }) => {
+const Scoreblock2 = ({ scores, homeScore }) => {
   const { slug } = useParams();
   //const game = games.find((game) => game.urlSlug === slug);
   const score = homeScore.filter((score) => score.urlSlug === slug);
