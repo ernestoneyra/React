@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 
+
 const GlobalHighscores = ({ scores, games }) => {
 
   const sortedHighscores = games.map((game) =>
@@ -7,6 +8,8 @@ const GlobalHighscores = ({ scores, games }) => {
     .filter((highscore) => highscore.urlSlug === game.urlSlug)
     .sort((a, b) => b.highscore.localeCompare(a.highscore))
 );
+
+
 return (
   <div>
     {sortedHighscores.map((score, index) => (
@@ -20,6 +23,7 @@ return (
         </div>
       </div>
     ))}
+   
   </div>
 );
 

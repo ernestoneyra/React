@@ -5,9 +5,12 @@ const Scoreblock2 = ({ scores, homeScore, games }) => {
   const { slug } = useParams();
   //const game = games.find((game) => game.urlSlug === slug); 
   const score = homeScore.filter((score) => score.urlSlug === slug)
-  const scoress = scores.filter((score) => score.urlSlug === slug)
-  //console.log(scores)
-  
+  const scoress = scores.filter((score) => score.urlSlug === slug) 
+  console.log(homeScore)
+
+
+
+
   /* const score2 = scores.filter((score) => score.game === slug)
   console.log(score2[0]) */
   //const currentGameHighscores = homeScore.filter((score) => score.urlSlug === score.game.urlSlug)
@@ -26,8 +29,13 @@ console.log(currentGameHighscores) */
   console.log(sorted)
 } */
  
-
-  //console.log(combined)
+/* const sortedHighscores = games.map((game) =>
+scores
+  .filter((highscore) => highscore.urlSlug === game.urlSlug)
+  .sort((a, b) => b.highscore.localeCompare(a.highscore))
+);
+console.log(sortedHighscores) */
+  console.log(combined)
 
   return (
     <div className="d-flex row">
