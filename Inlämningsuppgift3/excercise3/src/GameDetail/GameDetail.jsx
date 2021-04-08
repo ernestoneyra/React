@@ -19,7 +19,7 @@ export default function GameDetail({ scores, games, homeScore }) {
 
   console.log(currentGameHighscores) */
 
-
+console.log(game)
   /* if (score.length !== 0) {
    score.sort((a, b) => b.highscore - a.highscore);
   }  
@@ -44,7 +44,7 @@ export default function GameDetail({ scores, games, homeScore }) {
             <p className="">{game.genre}</p>
             <p className="">{game.release_year}</p>
           </div>
-          <img className="ms-3" src={game.imageUrl} alt={game.game} />
+          <img className="ms-3 w-50"  src={game.imageUrl} alt={game.game} />
         </div>
 
         <div className="d-flex justify-content-center">
