@@ -32,8 +32,9 @@ export default function GameDetail({ scores, games, homeScore }) {
           <h1>High Scores</h1>
         </div>
 
-        <Scoreblock2 scores={scores} homeScore={homeScore} games={games} />
+        <Scoreblock2 scores={scores} games={games} />
       </div>
     </>
   );
 }
+//homeScore={homeScore} 

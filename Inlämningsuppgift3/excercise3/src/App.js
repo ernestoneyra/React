@@ -13,7 +13,7 @@ if (module.hot) {
 const App = () => {
   const [scores, setScore] = useState([]);
   const [games, setGames] = useState([]);
-  const [homeScore, setHomeScore] = useState([]);
+  //const [homeScore, setHomeScore] = useState([]);
 
   const addScore = (score) => {
     setScore([...scores, score]);
@@ -23,8 +23,8 @@ const App = () => {
     fetch("./highscores.json")
       .then((resp) => resp.json())
 
-      .then((homeScore) => {
-        setHomeScore(homeScore);
+      .then((scores) => {
+        setScore(scores);
       });
   }, []);
 
@@ -43,10 +43,10 @@ const App = () => {
           <RegHighscore onRegister={addScore} />
         </Route>
         <Route path="/games/:slug">
-          <GameDetail scores={scores} homeScore={homeScore} games={games} />
+          <GameDetail scores={scores}  games={games} />
         </Route>
         <Route path="/">
-          <Home homeScore={homeScore} games={games} />
+          <Home scores={scores} games={games} />
         </Route>
       </Switch>
     </Router>
@@ -55,3 +55,4 @@ const App = () => {
 
 export default App;
 
+//homeScore={homeScore}  till gamedetail

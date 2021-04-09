@@ -5,36 +5,30 @@ import { useHistory, Link } from "react-router-dom";
 const RegHighscore = ({ onRegister }) => {
   const history = useHistory();
 
-  const [game, setGame] = useState("");
+  //const [game, setGame] = useState("");
   const [player, setPlayer] = useState("");
   const [date, setDate] = useState("");
   const [highscore, setHighscore] = useState("");
-  const [urlSlug, setUrlSlug] = useState("")
-  
+  const [urlSlug, setUrlSlug] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     //Allt från formuläret regisreras här
     const score = {
-     game,
+      //game,
       player,
       date,
       highscore,
       urlSlug,
-    
     };
-
- 
 
     onRegister(score);
 
-  
-    setGame("");
+    //setGame("");
     setPlayer("");
     setDate("");
     setHighscore("");
-
 
     //Byter sida till startsidan
     history.push("/");
@@ -51,16 +45,21 @@ const RegHighscore = ({ onRegister }) => {
         <label className="mb-2" htmlFor="game">
           Game:
         </label>
-       
-        <select className="form-select" id="urlSlug game"
-        onChange={(e) => {setGame(e.target.value); setUrlSlug(e.target.value)}}
+
+        <select
+          className="form-select"
+          id="urlSlug game"
+          onChange={(e) => {
+            //setGame(e.target.value);
+            setUrlSlug(e.target.value);
+          }}
         >
-        <option value="Choose game">Choose Game...</option>
+          <option value="Choose game">Choose Game...</option>
           <option value="tetris">Tetris</option>
           <option value="pacman">Pacman</option>
           <option value="asteroids">Asteroids</option>
         </select>
-        
+
         <label className="mb-2" htmlFor="player">
           Player:
         </label>
@@ -91,13 +90,13 @@ const RegHighscore = ({ onRegister }) => {
           id="score"
           className="form-control"
         />
-       
+
         <button className="btn btn-primary mt-2" onClick={handleSubmit}>
           Submit
         </button>
         <Link to={"/"}>
-        <button className="btn btn-info mt-2 ms-2">Back</button>
-          </Link>  
+          <button className="btn btn-info mt-2 ms-2">Back</button>
+        </Link>
       </form>
     </div>
   );
