@@ -11,6 +11,8 @@ if (module.hot) {
 }
 
 const App = () => {
+  /* const apiScores = "http://localhost:5000/scores"
+  const apiGames = "http://localhost:5000/games" */
   const [scores, setScore] = useState([]);
   const [games, setGames] = useState([]);
   //const [homeScore, setHomeScore] = useState([]);
@@ -20,27 +22,28 @@ const App = () => {
   };
 
   useEffect(() => {
-    fetch("./highscores.json")
+    fetch("http://localhost:5000/scores")
       .then((resp) => resp.json())
 
       .then((scores) => {
         setScore(scores);
       });
   }, []);
-
+console.log(scores)
   useEffect(() => {
-    fetch("./games.json")
+    fetch("http://localhost:5000/games")
       .then((resp) => resp.json())
       .then((games) => {
         setGames(games);
       });
   }, []);
+  console.log(games)
 
   return (
     <Router>
       <Switch>
         <Route exact path="/new">
-          <RegHighscore onRegister={addScore} />
+          <RegHighscore onRegister={addScore} scores={scores}/>
         </Route>
         <Route path="/games/:slug">
           <GameDetail scores={scores}  games={games} />

@@ -1,8 +1,10 @@
 /* eslint-disable react/jsx-no-duplicate-props */
 import { useState } from "react";
 import { useHistory, Link } from "react-router-dom";
+import axios from 'axios'
 
-const RegHighscore = ({ onRegister }) => {
+
+const RegHighscore = ({ onRegister}) => {
   const history = useHistory();
 
   //const [game, setGame] = useState("");
@@ -13,6 +15,7 @@ const RegHighscore = ({ onRegister }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+   
 
     //Allt från formuläret regisreras här
     const score = {
@@ -23,7 +26,7 @@ const RegHighscore = ({ onRegister }) => {
       urlSlug,
     };
 
-    onRegister(score);
+    //onRegister(score);
 
     //setGame("");
     setPlayer("");
@@ -31,7 +34,30 @@ const RegHighscore = ({ onRegister }) => {
     setHighscore("");
 
     //Byter sida till startsidan
-    history.push("/");
+    ///history.push("/");
+
+ /*    axios.post('http://localhost:5000/scores', {
+      player,
+      date,
+      highscore,
+      urlSlug,
+    })
+    .then(res => {
+      console.log(res)
+    }) */
+    axios.post('http://localhost:5000/scores', {
+      score
+    })
+    .then((response) => {
+      console.log(response);
+    }, (error) => {
+      console.log(error);
+    });
+
+
+
+
+    
   };
 
   return (
@@ -41,7 +67,7 @@ const RegHighscore = ({ onRegister }) => {
           <h1>Register High Score</h1>
         </span>
       </nav>
-      <form className="container">
+      <form className="container" method="POST" action="/scores">
         <label className="mb-2" htmlFor="game">
           Game:
         </label>
@@ -55,9 +81,9 @@ const RegHighscore = ({ onRegister }) => {
           }}
         >
           <option value="Choose game">Choose Game...</option>
-          <option value="tetris">Tetris</option>
-          <option value="pacman">Pacman</option>
-          <option value="asteroids">Asteroids</option>
+          <option value="tetris" name="game">Tetris</option>
+          <option value="pacman" name="game">Pacman</option>
+          <option value="asteroids" name="game">Asteroids</option>
         </select>
 
         <label className="mb-2" htmlFor="player">
@@ -65,6 +91,7 @@ const RegHighscore = ({ onRegister }) => {
         </label>
         <input
           type="text"
+          name="player"
           value={player}
           onChange={(e) => setPlayer(e.target.value)}
           id="player"
@@ -75,6 +102,7 @@ const RegHighscore = ({ onRegister }) => {
         </label>
         <input
           type="text"
+          name="date"
           value={date}
           onChange={(e) => setDate(e.target.value)}
           id="date"
@@ -85,6 +113,7 @@ const RegHighscore = ({ onRegister }) => {
         </label>
         <input
           type="text"
+          name="score"
           value={highscore}
           onChange={(e) => setHighscore(e.target.value)}
           id="score"
