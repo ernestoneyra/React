@@ -7,7 +7,7 @@ const GlobalHighscores = ({ scores, games }) => {
       .sort((a, b) => b.highscore.localeCompare(a.highscore))
   );
 
-
+console.log(scores)
 
   return (
     <div>

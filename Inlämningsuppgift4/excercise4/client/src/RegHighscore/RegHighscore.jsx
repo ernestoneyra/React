@@ -1,10 +1,14 @@
 /* eslint-disable react/jsx-no-duplicate-props */
 import { useState } from "react";
 import { useHistory, Link } from "react-router-dom";
-import axios from 'axios'
+import {addScores} from '../Redux/reducer'
+import { useDispatch } from "react-redux";
 
 
-const RegHighscore = ({ onRegister}) => {
+const RegHighscore = () => {
+
+  const dispatch = useDispatch();
+
   const history = useHistory();
 
   //const [game, setGame] = useState("");
@@ -17,16 +21,11 @@ const RegHighscore = ({ onRegister}) => {
     e.preventDefault();
    
 
-    //Allt från formuläret regisreras här
-    const score = {
-      //game,
-      player,
-      date,
-      highscore,
-      urlSlug,
-    };
+    //Ett tips är att i handleSubmit, inte bara skicka en post till servern, utan att även lägga till score till din score state som du har sedan innan
+    //Så uppdaterar du servern, och uppdaterar det lokala, utan att behöva skicka ett onödigt get request till servern
 
-    //onRegister(score);
+    
+    //Allt från formuläret regisreras här
 
     //setGame("");
     setPlayer("");
@@ -34,30 +33,19 @@ const RegHighscore = ({ onRegister}) => {
     setHighscore("");
 
     //Byter sida till startsidan
-    ///history.push("/");
+    //history.push("/");
 
- /*    axios.post('http://localhost:5000/scores', {
+    let score = {
       player,
       date,
       highscore,
       urlSlug,
-    })
-    .then(res => {
-      console.log(res)
-    }) */
-    axios.post('http://localhost:5000/scores', {
-      score
-    })
-    .then((response) => {
-      console.log(response);
-    }, (error) => {
-      console.log(error);
-    });
+    }
 
-
-
-
+    dispatch(addScores(score))
     
+   
+
   };
 
   return (
