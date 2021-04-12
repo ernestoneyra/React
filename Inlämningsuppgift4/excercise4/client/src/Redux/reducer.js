@@ -7,8 +7,8 @@ const initialState = {
 export default function (state = initialState, action) {
   switch (action.type) {
     case "scores/show": {
-      const score = action.payload.scores;
-
+      const score = action.payload.scores; //har scores som object
+      //console.log('action.payload.scores', action.payload.scores)
       const game = action.payload.games;
 
       const newState = { ...state};
@@ -18,17 +18,21 @@ export default function (state = initialState, action) {
 
       //console.log(newState);
 
-      console.log("games invoked");
+      console.log("games invoked", game);
       return newState;
     }
     
     case "score/add": {
+      //const score = action.payload.scores; //last is undefined
       const score = action.payload.score;
+      console.log('score', score)
       //console.log(score);
       const newState = { ...state, 
-    scores: [...state.scores, score] };
+    score: [...state.scores, score] };
 
-    console.log(state.scores)
+    console.log('scores added', state.scores)
+   
+    console.log('newState', newState) //the new score becomes an array of all the scores. 8th score becomes and array of the old and new one
    
       
 

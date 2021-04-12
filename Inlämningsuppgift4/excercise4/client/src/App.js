@@ -15,7 +15,7 @@ const App = (props) => {
   /*  let scores = useSelector(state => state.scores);
   let games = useSelector(state => state.games); */
 
-  console.log(props);
+  console.log('props', props);
 
   return (
     <>
