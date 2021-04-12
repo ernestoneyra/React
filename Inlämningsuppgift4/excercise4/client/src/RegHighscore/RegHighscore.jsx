@@ -33,7 +33,7 @@ const RegHighscore = () => {
     setHighscore("");
 
     //Byter sida till startsidan
-    //history.push("/");
+    history.push("/");
 
     let score = {
       player,

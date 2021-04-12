@@ -7,32 +7,33 @@ const initialState = {
 export default function (state = initialState, action) {
   switch (action.type) {
     case "scores/show": {
-      const scores = action.payload.scores;
+      const score = action.payload.scores;
 
-      const games = action.payload.games;
+      const game = action.payload.games;
 
-      const newState = { ...state, scores, games };
+      const newState = { ...state};
 
-      /*  newState.scores = score;
-      newState.games = game;  */ 
+       newState.scores = score;
+      newState.games = game;  
 
-      console.log(newState);
+      //console.log(newState);
 
       console.log("games invoked");
       return newState;
     }
     
     case "score/add": {
-      const score = action.payload.scores;
-
+      const score = action.payload.score;
+      //console.log(score);
       const newState = { ...state, 
     scores: [...state.scores, score] };
 
-     
-
-      console.log("scores added");
+    console.log(state.scores)
+   
+      
 
       return newState;
+      
     }
 
     default:
@@ -65,8 +66,8 @@ export async function fetchScores(dispatch, getState) {
     });
 
     const addedScore = await response.json();
-
+    
     // 2: dispatcha action till store för att även lägga till produkten där
-    dispatch({ type: "score/add", payload: {  addedScore } });
+    dispatch({ type: "score/add", payload: {score: addedScore } });
   };
 } 

@@ -39,6 +39,7 @@ const App = (props) => {
 function mapStateToProps(state) {
   const { scores } = state;
   const { games } = state;
+  
   return { scores, games };
 }
 

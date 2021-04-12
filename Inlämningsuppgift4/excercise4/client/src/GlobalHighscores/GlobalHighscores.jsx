@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import '../styles/global.css'
+
 const GlobalHighscores = ({ scores, games }) => {
   const sortedHighscores = games.map((game) =>
     scores
@@ -7,7 +8,7 @@ const GlobalHighscores = ({ scores, games }) => {
       .sort((a, b) => b.highscore.localeCompare(a.highscore))
   );
 
-console.log(scores)
+
 
   return (
     <div>
