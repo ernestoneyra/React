@@ -28,7 +28,7 @@ export default function (state = initialState, action) {
       console.log('score', score)
       //console.log(score);
       const newState = { ...state, 
-    score: [...state.scores, score] };
+    scores: [...score] };
 
     console.log('scores added', state.scores)
    
@@ -44,6 +44,8 @@ export default function (state = initialState, action) {
       return state;
   }
 }
+
+
 
 export async function fetchScores(dispatch, getState) {
   const response = await fetch("http://localhost:5000/scores");
